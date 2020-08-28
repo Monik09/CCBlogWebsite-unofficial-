@@ -25,7 +25,7 @@ const RESOURCES = {
 "assets/assets/images/workshop.jpg": "7913f97039c62714a010270ebaa5ba95",
 "assets/FontManifest.json": "18eda8e36dfa64f14878d07846d6e17f",
 "assets/fonts/MaterialIcons-Regular.ttf": "56d3ffdef7a25659eab6a68a3fbfaf16",
-"assets/NOTICES": "53df226bb5b5a67a71546b363aea0276",
+"assets/NOTICES": "67bf3ececc43bbbe5303e17e530c675c",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "115e937bb829a890521f72d2e664b632",
 "assets/packages/flutter_signin_button/assets/logos/2.0x/google_dark.png": "937022ea241c167c8ce463d2ef7ed105",
 "assets/packages/flutter_signin_button/assets/logos/2.0x/google_light.png": "8f10eb93525f0c0259c5e97271796b3c",
@@ -41,7 +41,7 @@ const RESOURCES = {
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "index.html": "6e937e0162ed0003964df8d214cc176c",
 "/": "6e937e0162ed0003964df8d214cc176c",
-"main.dart.js": "dce9d576a20dc9a862185449fae62627",
+"main.dart.js": "b9983e704a22f1e990faf0b70d75d23e",
 "manifest.json": "44b9b3e66a1ac627fd0cba16b5da099e"
 };
 
