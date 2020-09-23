@@ -4,7 +4,6 @@ import './screens/homepage.dart';
 import './screens/knowUs.dart';
 import './screens/events_screen.dart';
 import './screens/project_screen.dart';
-import './screens/pastevents.dart';
 
 void main() {
   runApp(MyApp());
@@ -20,7 +19,6 @@ class MyApp extends StatelessWidget {
         ProjectScreen.routeName: (context) => ProjectScreen(),
         KnowUsScreen.routeName: (context) => KnowUsScreen(),
         ContactScreen.routeName: (context) => ContactScreen(),
-        PastEventsScreen.routeName: (context) => PastEventsScreen()
       }, 
       // builder: (context, widget) => ResponsiveWrapper.builder(
       //    BouncingScrollWrapper.builder(context, widget),

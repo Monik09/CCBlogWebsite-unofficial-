@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../responsive_widget.dart';
+import '../screens/pastevents.dart';
 
 Widget gridViewEvent(List<Map<String, dynamic>> event, BuildContext context) {
   return GridView.count(
@@ -11,30 +12,44 @@ Widget gridViewEvent(List<Map<String, dynamic>> event, BuildContext context) {
     crossAxisSpacing: ResponsiveWidget.isLargeScreen(context)
         ? MediaQuery.of(context).size.width * 0.012
         : MediaQuery.of(context).size.width * 0.002,
-    // childAspectRatio: 1,
+    childAspectRatio: 1,
     children: List.generate(
       event.length,
       (index) {
         return Container(
-          height: ResponsiveWidget.isLargeScreen(context)
-              ? MediaQuery.of(context).size.height * 0.68
-              : MediaQuery.of(context).size.height * 0.28,
+          // height: ResponsiveWidget.isLargeScreen(context)
+          //     ? MediaQuery.of(context).size.height * 0.68
+          //     : MediaQuery.of(context).size.height * 0.28,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               !ResponsiveWidget.isLargeScreen(context)
-                  ? Card(
+                  ? InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => PastDetailScreen(
+                            event[index],
+                          ),
+                        ));
+                      },
                       child: Image.asset(
                         event[index]['image'],
                         fit: BoxFit.scaleDown,
                       ),
                     )
-                  : Card(
+                  : InkWell(
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => PastDetailScreen(
+                            event[index],
+                          ),
+                        ));
+                      },
                       child: Image.asset(
                         event[index]['image'],
                         fit: BoxFit.fill,
-                        width: MediaQuery.of(context).size.width * 0.26,
-                        height: MediaQuery.of(context).size.height * 0.26,
+                        width: MediaQuery.of(context).size.width * 0.3,
+                        height: MediaQuery.of(context).size.height * 0.4,
                       ),
                     ),
               Flexible(
@@ -66,7 +81,7 @@ Widget gridViewEvent(List<Map<String, dynamic>> event, BuildContext context) {
                     padding: EdgeInsets.only(
                         left: MediaQuery.of(context).size.width * 0.008),
                     child: Text(
-                      event[index]['Date'],
+                      event[index]['date'],
                       softWrap: false,
                       style: GoogleFonts.arsenal(
                           fontStyle: FontStyle.italic,
@@ -81,6 +96,7 @@ Widget gridViewEvent(List<Map<String, dynamic>> event, BuildContext context) {
               // ),
             ],
           ),
+          // ),
         );
       },
     ),

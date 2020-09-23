@@ -19,21 +19,62 @@ class EventScreen extends StatefulWidget {
 
 class _EventScreenState extends State<EventScreen> {
   List<Widget> carouselList = [];
-  List<Map<String, String>> _pastEvents = [
+  List<Map<String, dynamic>> _pastEvents = [
     {
       'title': "Introduction to UI/UX",
-      'Date': '8 APR/2020',
-      'image': 'assets/images/ui_ux.png'
+      'date': '8 APR/2020',
+      'image': 'assets/images/ui_ux.png',
+      'location': 'LH1, Sabar Campus',
+      'info': 'Have a sense of design',
+      'time': '3 pm',
+      'duration': '2.6 hrs',
+      'Speakers': ['Pranay Aggarwal'],
+      'SkillLevel': 1,
+      'prerequisite': ['None'],
+      'requirements': ['Laptop', 'Illustrator', 'Adobe Xd'],
+      'Poweredby': 'DSC design'
     },
     {
       'title': "Cook-a-code Dicussion",
-      'Date': '1 MAR/2020',
-      'image': 'assets/images/cook.png'
+      'date': '1 MAR/2020',
+      'image': 'assets/images/cook.png',
+      'location': 'LH1, Sabar Campus',
+      'info': 'Coding problems',
+      'time': '1 pm',
+      'duration': '2 hrs',
+      'Speakers': ['Vidit Shukla'],
+      'SkillLevel': 1,
+      'prerequisite': ['None'],
+      'requirements': ['Laptop', 'basic DSA implementation'],
+      // 'Poweredby': 'Codechef'
     },
     {
       'title': "Introduction to Flutter",
-      'Date': '16 DEC/2020',
-      'image': 'assets/images/intro.png'
+      'date': '16 DEC/2020',
+      'image': 'assets/images/intro.png',
+      'location': 'LH1, Sabar Campus',
+      'info': 'Flutter a cross platform android develpoment framework',
+      'time': '4 pm',
+      'duration': '2 hrs',
+      'Speakers': ['Ashutosh Singh', 'Saloni Lakhotia'],
+      'SkillLevel': 1,
+      'prerequisite': ['None'],
+      'requirements': ['Laptop', 'Android Studio', 'Vs-Code'],
+      // 'Poweredby': 'DSC Android'
+    },
+    {
+      'title': "Introduction to Flutter",
+      'date': '16 DEC/2020',
+      'image': 'assets/images/intro.png',
+      'location': 'LH1, Sabar Campus',
+      'info': 'Flutter a cross platform android develpoment framework',
+      'time': '4 pm',
+      'duration': '2 hrs',
+      'Speakers': ['Ashutosh Singh', 'Saloni Lakhotia'],
+      'SkillLevel': 1,
+      'prerequisite': ['None'],
+      'requirements': ['Laptop', 'Android Studio', 'Vs-Code'],
+      // 'Poweredby': 'DSC Android'
     }
   ];
   List<Map<String, dynamic>> _events = [
@@ -80,7 +121,6 @@ class _EventScreenState extends State<EventScreen> {
       'requirements': ['Laptop']
     }
   ];
-
   List<Map<String, dynamic>> get getEvents {
     return [..._events];
   }
@@ -287,33 +327,31 @@ class _EventScreenState extends State<EventScreen> {
             ),
             Container(
               height: ResponsiveWidget.isLargeScreen(context)
-                  ? MediaQuery.of(context).size.height * 0.7
+                  ? MediaQuery.of(context).size.height * 0.75
                   : MediaQuery.of(context).size.height * 0.5,
               // width: MediaQuery.of(context).size.width,
-              child: Container(
-                padding: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.height * 0.032,
-                    left: MediaQuery.of(context).size.width * 0.020),
-                child: !isPressed
-                    ? FlatButton(
-                        onPressed: () {
-                          Navigator.of(context)
-                              .pushNamed(PastEventsScreen.routeName);
-                        },
-                        child: gridViewEvent(_pastEvents, context))
-                    : Center(
-                        child: Text(
-                          'Corona corrupted the System.fun.year("2020") brother. Meet you soon in 2021.....',
-                          style: GoogleFonts.trykker(
-                              fontWeight: FontWeight.w100,
-                              fontSize: ResponsiveWidget.isLargeScreen(context)
-                                  ? MediaQuery.of(context).size.width * 0.020
-                                  : MediaQuery.of(context).size.width * 0.09,
-                              color: Color(0xff9E9E9E)),
+              child:
+                  // Container(
+                  //   padding: EdgeInsets.only(
+                  //       top: MediaQuery.of(context).size.height * 0.032,
+                  //       left: MediaQuery.of(context).size.width * 0.020),
+                  //   child:
+                  !isPressed
+                      ? gridViewEvent(_pastEvents, context)
+                      : Center(
+                          child: Text(
+                            'Corona corrupted the System.fun.year("2020") brother. Meet you soon in 2021.....',
+                            style: GoogleFonts.trykker(
+                                fontWeight: FontWeight.w100,
+                                fontSize: ResponsiveWidget.isLargeScreen(
+                                        context)
+                                    ? MediaQuery.of(context).size.width * 0.020
+                                    : MediaQuery.of(context).size.width * 0.09,
+                                color: Color(0xff9E9E9E)),
+                          ),
                         ),
-                      ),
-              ),
             ),
+            // ),
           ],
         ),
       ),
